@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+	version="2.0">
+	<description>将时间戳转换成时间格式</description>
+	<tlib-version>1.0</tlib-version>
+	<short-name>time</short-name>
+	<uri>http://www.jikexueyuan.com/tags/timestamp</uri>
+	<tag>
+		<name>timestamp</name>
+		<tag-class>com.vshop.tag.FormatTimeStamp</tag-class>
+		<body-content>empty</body-content>
+
+		<attribute>
+			<name>timestamp</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>format</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+	</tag>
+
+	<!-- 将时间戳转换成时间格式(用在EL表达式当中) -->
+	<function>
+		<description>将时间戳转换成时间格式(用在EL表达式当中)</description>
+		<name>fmtTimeStamp</name>
+		<function-class>com.vshop.util.StringHelper</function-class>
+		<function-signature>java.lang.String getDateByTimeStamp(long,java.lang.String)</function-signature>
+	</function>
+	
+	<!-- 获取相应的奖金(用在EL表达式当中) -->
+	<function>
+		<description>获取相应的奖金(用在EL表达式当中)</description>
+		<name>getMoney</name>
+		<function-class>com.vshop.util.GetMoney</function-class>
+		<function-signature>float GetMoneyByNum(int,int)</function-signature>
+	</function>
+
+</taglib>
+
